@@ -3,19 +3,18 @@ package gobotI2C
 import (
 	"fmt"
 	"github.com/hybridgroup/gobot"
-	"reflect"
 )
 
 type Wiichuck struct {
 	gobot.Driver
-	Adaptor  *interface{}
+	Adaptor  I2cInterface
 	joystick map[string]float64
 	data     map[string]float64
 }
 
-func NewWiichuck(a interface{}) *Wiichuck {
+func NewWiichuck(a I2cInterface) *Wiichuck {
 	w := new(Wiichuck)
-	w.Adaptor = &a
+	w.Adaptor = a
 	w.Events = make(map[string]chan interface{})
 	w.Events["z_button"] = make(chan interface{})
 	w.Events["c_button"] = make(chan interface{})
@@ -34,11 +33,11 @@ func NewWiichuck(a interface{}) *Wiichuck {
 }
 
 func (w *Wiichuck) StartDriver() {
-	gobot.Call(reflect.ValueOf(w.Adaptor).Elem().Interface(), "I2cStart", byte(0x52))
+	w.Adaptor.I2cStart(byte(0x52))
 	gobot.Every(w.Interval, func() {
-		gobot.Call(reflect.ValueOf(w.Adaptor).Elem().Interface(), "I2cWrite", []uint16{uint16(0x40), uint16(0x00)})
-		gobot.Call(reflect.ValueOf(w.Adaptor).Elem().Interface(), "I2cWrite", []uint16{uint16(0x00)})
-		new_value := gobot.Call(reflect.ValueOf(w.Adaptor).Elem().Interface(), "I2cRead", uint16(6))[0].Interface().([]uint16)
+		w.Adaptor.I2cWrite([]uint16{uint16(0x40), uint16(0x00)})
+		w.Adaptor.I2cWrite([]uint16{uint16(0x00)})
+		new_value := w.Adaptor.I2cRead(uint16(6))
 		if len(new_value) == 6 {
 			w.update(new_value)
 		}
