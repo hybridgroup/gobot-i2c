@@ -1,8 +1,10 @@
-# gobot-i2c
+# Gobot Drivers For I2C Devices
 
 Gobot (http://gobot.io/) is a framework and set of libraries for robotics, physical computing, and the Internet of Things written in the Go programming language (http://golang.org/).
 
 This library provides drivers for i2c devices (https://en.wikipedia.org/wiki/I%C2%B2C). You would not normally use this library directly, instead it is used by Gobot adaptors that have i2c support.
+
+[![Build Status](https://travis-ci.org/hybridgroup/gobot-i2c.svg?branch=master)](https://travis-ci.org/hybridgroup/gobot-i2c)
 
 ## Getting Started
 Install the library with: `go get -u github.com/hybridgroup/gobot-i2c`
