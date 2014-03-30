@@ -13,9 +13,10 @@ var _ = Describe("Wiichuck", func() {
 
 	BeforeEach(func() {
 		someDriver = NewWiichuck(someAdaptor)
+		someDriver.Interval = "100ms"
 	})
 
-	PIt("Should be able to Start", func() {
-		Expect(true)
+	It("Must be able to Start", func() {
+		Expect(someDriver.Start()).To(Equal(true))
 	})
 })

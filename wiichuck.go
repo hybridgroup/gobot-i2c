@@ -32,7 +32,7 @@ func NewWiichuck(a I2cInterface) *Wiichuck {
 	return w
 }
 
-func (w *Wiichuck) StartDriver() {
+func (w *Wiichuck) Start() bool {
 	w.Adaptor.I2cStart(byte(0x52))
 	gobot.Every(w.Interval, func() {
 		w.Adaptor.I2cWrite([]uint16{uint16(0x40), uint16(0x00)})
@@ -42,6 +42,7 @@ func (w *Wiichuck) StartDriver() {
 			w.update(new_value)
 		}
 	})
+	return true
 }
 
 func (w *Wiichuck) update(value []uint16) {

@@ -13,9 +13,10 @@ var _ = Describe("HMC6352", func() {
 
 	BeforeEach(func() {
 		someDriver = NewHMC6352(someAdaptor)
+		someDriver.Interval = "1s"
 	})
 
-	PIt("Should be able to Start", func() {
-		Expect(true)
+	It("Must be able to Start", func() {
+		Expect(someDriver.Start()).To(Equal(true))
 	})
 })
