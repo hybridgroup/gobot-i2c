@@ -44,6 +44,8 @@ func (w *Wiichuck) Start() bool {
 	})
 	return true
 }
+func (w *Wiichuck) Init() bool { return true }
+func (w *Wiichuck) Halt() bool { return true }
 
 func (w *Wiichuck) update(value []uint16) {
 	if w.isEncrypted(value) {

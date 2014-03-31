@@ -7,9 +7,9 @@ import (
 
 var _ = Describe("BlinkM", func() {
 	var (
-			someAdaptor TestAdaptor
-			someDriver *BlinkM
-		)
+		someAdaptor TestAdaptor
+		someDriver  *BlinkM
+	)
 
 	BeforeEach(func() {
 		someDriver = NewBlinkM(someAdaptor)

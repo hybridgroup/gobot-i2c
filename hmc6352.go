@@ -31,3 +31,5 @@ func (self *HMC6352) Start() bool {
 	})
 	return true
 }
+func (self *HMC6352) Init() bool { return true }
+func (self *HMC6352) Halt() bool { return true }

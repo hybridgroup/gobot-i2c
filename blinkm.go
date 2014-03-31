@@ -29,6 +29,8 @@ func (self *BlinkM) Start() bool {
 	self.Rgb(0, 0, 0)
 	return true
 }
+func (self *BlinkM) Init() bool { return true }
+func (self *BlinkM) Halt() bool { return true }
 
 func (self *BlinkM) Rgb(r byte, g byte, b byte) {
 	self.Adaptor.I2cWrite([]uint16{uint16([]byte("n")[0])})
