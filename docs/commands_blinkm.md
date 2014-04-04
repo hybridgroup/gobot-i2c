@@ -1,41 +1,53 @@
-# Commands
+# Functions
 
-## RgbC
+## FirmwareVersion
 
-Text here
+Returs the version of the current Frimware.
 
-##### Params
+#### API Command
 
-##### Returns
+**FirmwareVersionC**
 
-`nil`
+## Color
 
-## ColorC
+Returs the color of the driver.
 
-Text here
+#### API Command
 
-##### Params
+**ColorC**
 
-##### Returns
+## Rgb(r, g, b)
 
-`nil`
+Sets the RGB color.
 
-## FadeC
+#### Params
 
-Text here
+- **r** - Red
+- **g** - Green
+- **b** - Blue
 
-##### Params
+#### Returns
 
-##### Returns
+- **(r,g,b)** - the LED color
 
-`nil`
+#### API Command
 
-## FirmwareVersionC
+**RgbC**
 
-Text here
+## Fade(r, g, b)
 
-##### Params
+Fades the RGB color.
 
-##### Returns
+#### Params
 
-`nil`
+- **r** - Red
+- **g** - Green
+- **b** - Blue
+
+#### Returns
+
+- **(r,g,b)** - the LED color
+
+#### API Command
+
+**FadeC**

@@ -1,9 +1,5 @@
 # Events
 
-## start
-
-Sent when the device has been started and is ready to use.  
-
 ## z_button
 
 Get's triggered every interval amount of time if the square button is pressed.
