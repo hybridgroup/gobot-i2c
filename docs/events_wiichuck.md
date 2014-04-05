@@ -2,11 +2,11 @@
 
 ## z_button
 
-Get's triggered every interval amount of time if the square button is pressed.
+Get's triggered every interval amount of time if the z button is pressed.
 
 ## c_button
 
-Get's triggered every interval amount of time if the square button is pressed.
+Get's triggered every interval amount of time if the c button is pressed.
 
 ## joystick
 

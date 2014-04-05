@@ -4,49 +4,49 @@
 
 Returs the version of the current Frimware.
 
+### Returns
+
+- **string** - Firmware Version 
+
 #### API Command
 
 **FirmwareVersionC**
 
 ## Color
 
-Returs the color of the driver.
+Returns the color of the LED.
+
+#### Returns
+
+- **[]byte** - the RGB LED color
 
 #### API Command
 
 **ColorC**
 
-## Rgb(r, g, b)
+## Rgb(r byte, g byte, b byte)
 
 Sets the RGB color.
 
 #### Params
 
-- **r** - Red
-- **g** - Green
-- **b** - Blue
-
-#### Returns
-
-- **(r,g,b)** - the LED color
+- **r** - **byte** - Red
+- **g** - **byte** - Green
+- **b** - **byte** - Blue
 
 #### API Command
 
 **RgbC**
 
-## Fade(r, g, b)
+## Fade(r byte, g byte, b byte)
 
 Fades the RGB color.
 
 #### Params
 
-- **r** - Red
-- **g** - Green
-- **b** - Blue
-
-#### Returns
-
-- **(r,g,b)** - the LED color
+- **r** - **byte** - Red
+- **g** - **byte** - Green
+- **b** - **byte** - Blue
 
 #### API Command
 
